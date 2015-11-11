@@ -1,6 +1,6 @@
 # Helper Functions
 
-## arg()
+## arg(array $args, $key, $function = null)
 
 Get the key or return the default.
 
@@ -11,9 +11,9 @@ Get the key or return the default.
     @return mixed
     @throws InvalidArgumentException
 
-## arr()
+## arr(array $args, $key, $explodeDelimiter = false)
 
-Get an array argument.
+Get an `array` argument.
 
     @param $args
     @param $key
@@ -23,9 +23,9 @@ Get an array argument.
     @throws InvalidArgumentException
      
 
-## boolean()
+## boolean(array $args, $key)
 
-Sugar so the dev knows the arg should be boolean.
+Sugar so the dev knows the arg should be `boolean`.
 
     @param $args
     @param $key
@@ -33,7 +33,7 @@ Sugar so the dev knows the arg should be boolean.
     @return bool
     @throws InvalidArgumentException
 
-## text()
+## text(AiCrawler &$node, $position, $remove_children, $case_sensitive, $ascii = false)
 
 Get the text for a node.
 
@@ -45,9 +45,9 @@ Get the text for a node.
     
     @return string
 
-## subset()
+## subset(AiCrawler &$node, $args = [], $condition = true, $function = null)
 
-On the condition passing, array_intersect with static::$subsetFunctions
+On the condition passing, array_intersect with `static::$subsetFunctions`
 and run all those methods on the node provided. This enables us to nest
 our rules and continue down some rabbit hole to make an assertion.
 
