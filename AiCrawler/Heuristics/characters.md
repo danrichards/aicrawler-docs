@@ -1,2 +1,5 @@
 # characters()
 
+## Usage
+
+## Args
