@@ -1,0 +1,13 @@
+{
+  "name": "dan/aicrawler-docs",
+  "description": "Documentation for AiCrawler, AiResponses and AiScrapers projects.",
+  "license": "MIT",
+  "keywords": ["scraper","crawler","ai"],
+  "authors": [
+    {
+      "name": "Dan Richards",
+      "email": "danrichardsri@gmail.com"
+    }
+  ],
+  "minimum-stability": "stable"
+}
