@@ -18,7 +18,7 @@
        * [after_missing()](AiCrawler/Heuristics/after_missing.md)
        * [on()](AiCrawler/Heuristics/on.md)
        * [children()](AiCrawler/Heuristics/children.md/children.md)
-       * [parents()](AiCrawler/Heuristics/sentences.md/parents.md)
+       * [parents()](AiCrawler/Heuristics/parents.md/parents.md)
        * [siblings()](AiCrawler/Heuristics/sentences.md/siblings.md)
        * [Helper Functions](AiCrawler/Heuristics/sentences.md/helpers.md)
        * [Extending Heuristics](AiCrawler/Heuristics/sentences.md/extending.md)
