@@ -17,3 +17,4 @@ Advice when extending Heuristics:
     `public static function heuristic(AiCrawler &$node, array $args = [])`
     
 7. Heuristics methods should be snake_case (sorry).
+
