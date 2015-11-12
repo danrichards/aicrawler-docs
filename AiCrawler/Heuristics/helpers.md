@@ -33,13 +33,13 @@ Sugar so the dev knows the arg should be `boolean`.
     @return bool
     @throws InvalidArgumentException
 
-## text(AiCrawler &$node, $position, $remove_children, $case_sensitive, $ascii = false)
+## text(AiCrawler &$node, $position = 0, $descendants = false, $case_sensitive = false, $ascii = false)
 
 Get the text for a node.
 
     @param AiCrawler $node
     @param int $position
-    @param bool $remove_children
+    @param bool $descendants
     @param bool $case_sensitive
     @param bool $ascii
     
