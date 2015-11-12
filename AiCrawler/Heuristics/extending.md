@@ -2,7 +2,7 @@
 
 
 Heuristics is a bunch of static methods that return `boolean` values. We may
-build creative tools that traverse a node structure and score nodes using
+build creative tools ([see AiScrapers](../AiScrapers/README.md)) that traverse a node structure and score nodes using
 these static methods without memory getting out of hand.
 
 Advice when extending Heuristics:
