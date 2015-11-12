@@ -14,6 +14,6 @@ Advice when extending Heuristics:
 5. Subset methods (e.g. `children()`) should not `return static::subset(...)`.
 6. Heuristics methods should follow the following interface: 
 
-    `public static function heuristic(AiCrawler &$node, array $args = [])`.
+    `public static function heuristic(AiCrawler &$node, array $args = [])`
     
 7. Heuristics methods should be snake_case (sorry).
