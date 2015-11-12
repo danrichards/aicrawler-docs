@@ -22,5 +22,4 @@
        * [siblings()](AiCrawler/Heuristics/siblings.md)
        * [Helper Functions](AiCrawler/Heuristics/helpers.md)
        * [Extending Heuristics](AiCrawler/Heuristics/extending.md)
-* AiResponses
 
