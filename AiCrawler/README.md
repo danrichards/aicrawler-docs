@@ -4,7 +4,7 @@ Leverage Ai design patterns using heuristics with the Symfony DOMCrawler.
 
 ## What is it?
 
-The [Symfony DOMCrawler](http://symfony.com/doc/current/components/dom_crawler.html) does great job building special-purpose crawlers. AiCrawler provides the means to build intelligent all-purpose scrapers, data-analysis tools or something specialized. The over-arching goal for this extension is to take a AI approach towards [scoring nodes on the DOM](scorable.md), based on interesting characteristics that can be defined by a heuristic. 
+The [Symfony DOMCrawler](http://symfony.com/doc/current/components/dom_crawler.html) does great job building special-purpose crawlers. AiCrawler provides the means to build intelligent all-purpose scrapers, data-analysis tools or something specialized. The over-arching goal for this extension is to take a AI approach towards [scoring nodes on the DOM](scorable.md), based on interesting characteristics that can be defined by a [heuristic](Heuristics/README.md). 
 
 Scoring nodes using heuristics allows us to use our creativity to do some of the following things: 
 
