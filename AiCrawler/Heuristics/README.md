@@ -64,7 +64,7 @@ Does the div have at least 15 words?
 ```
 $args = ['words' => 15];
 
-$assertion = Heuristics::characters($node, $args)); // true / false
+$assertion = Heuristics::words($node, $args)); // true / false
 ```
     
     
