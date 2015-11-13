@@ -96,8 +96,8 @@ Does the div's text (including the text of its descendants) have at least two ma
 ```
 $args = [
     'words' => [
-        '(cod(ing|ed|e)|program|language|php)/' => 2,
-        '(a(rtificial\s)?i(ntelligence)?|machine\slearn)/' => 1
+        '/(cod(ing|ed|e)|program|language|php)/' => 2,
+        '/(a(rtificial\s)?i(ntelligence)?|machine\slearn)/' => 1
     ],
     'regex' => true,
     'descendants' => true,
