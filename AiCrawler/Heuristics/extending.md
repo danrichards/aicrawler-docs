@@ -1,9 +1,7 @@
 # Extending Heuristics
 
 
-Heuristics is a bunch of static methods that return `boolean` values. We may
-build creative tools ([see AiScrapers](../../AiScrapers/README.md)) that traverse a node structure and score nodes using
-these static methods without memory getting out of hand.
+The Heuristics class is a collection of static methods that return `boolean` values. Think of the class as a set of rules in which we may score (see [Scorable](../scorable.md)) nodes (make assertions) on the DOM. All the arguments are provided in one array `$args`, so we may easily store configurations and use our heuristic functions dynamically. This pattern (see [AiScrapers](../../AiScrapers/README.md) for example) in combination with the what you already get with the excellent [Symfony DOMCrawler](http://symfony.com/doc/current/components/dom_crawler.html) allow us to build abstractions that iterate the DOM and hit nodes with heuristics (rules) to determine some interesting.
 
 ## Extending Heuristics
 
