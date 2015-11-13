@@ -5,10 +5,13 @@ Leverage Ai design patterns using heuristics with the Symfony DOMCrawler.
 
 ## Table of Contents
 
+- [Reading the docs](#reading)
 - [AiCrawler](AiCrawler/README.md)
    - [Scorable](AiCrawler/scorable.md)
    - [Extra](AiCrawler/extra.md)
    - [Heuristics](AiCrawler/Heuristics/README.md)
+- [AiResponses](AiResponses/README.md)
+- [AiScrapers](AiScrapers/README.md)
 - [Release Notes](#notes)
 - [Contributing](#contributing)
 - [License](#license)
@@ -16,17 +19,18 @@ Leverage Ai design patterns using heuristics with the Symfony DOMCrawler.
 
 ## Quickstart<a name="quickstart"></a>
 
-The AiCrawler package has the responsibility of making boolean assertions on a node in the HTML DOM. It comes with a straight-forward data point trait which will record the results of your heuristics (rules) for a given "item" or context.
+The [AiCrawler](AiCrawler/README.md) package has the responsibility of making boolean assertions on a node in the HTML DOM. It comes with a straight-forward [data point trait](AiCrawler/scorable.md) which will record the results of your [heuristics (rules)](AiCrawler/Heuristics/README.md) for a given "item" or context.
 
-##Install with Composer<a name="install"></a>
+## Install with Composer<a name="install"></a>
 
 >$ composer require dan/aicrawler dev-master
 
 
 ## Version 0.0.1<a name="notes"></a>
 
-- A heuristic pattern for building web scrapers.
-- A good set of heuristics to get you started.
+- A `Heuristics` class with some cool rules to get you started.
+- A `Scorable` trait is on our `AiCrawler`class for data points.
+- A `Extra` trait is on our `AiCrawler` class so there is a pattern for storing extra data.
 
 
 ## Todo<a name="todo"></a>
