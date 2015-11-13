@@ -7,6 +7,7 @@
 - [Why all the statics?](#statics)
 - [Helper Methods](helpers.md)
 - [Extending Heuristics](extending.md) 
+- [Heuristics List](#heuristics)
 
 >The objective of a heuristic is to produce a solution in a reasonable time frame that is good enough for solving the problem at hand. This solution may not be the best of all the actual solutions to this problem, or it may simply approximate the exact solution. But it is still valuable because finding it does not require a prohibitively long time. ~ wikipedia
 
@@ -206,4 +207,24 @@ So nested rules are a simple way to apply **AND** logic to your assertions! If y
 ## Why all the statics?
 
 The `Heuristics` class was made entirely static so it would be difficult to build subsequent abstractions which put memory at risk. The Symfony DOMCrawler provides tools for iterating the DOM which we can apply heuristic assertions and then apply scoring. A combination of rule configurations, how we score those rules, and how we iterate the DOM will determine the usefulness of our tools.
+
+## Heuristics List
+
+* [characters()](AiCrawler/Heuristics/characters.md)
+* [words()](AiCrawler/Heuristics/words.md)
+* [punctuation()](AiCrawler/Heuristics/punctuation.md)
+* [sentences()](AiCrawler/Heuristics/sentences.md)
+* [questions()](AiCrawler/Heuristics/questions.md)
+* [exclamatory()](AiCrawler/Heuristics/exclamatory.md)
+* [p()](AiCrawler/Heuristics/p.md)
+* [a()](AiCrawler/Heuristics/a.md)
+* [img()](AiCrawler/Heuristics/img.md)
+* [attributes()](AiCrawler/Heuristics/attributes.md)
+* [attribute_values()](AiCrawler/Heuristics/attribute_values.md)
+* [after_hitting()](AiCrawler/Heuristics/after_hitting.md)
+* [after_missing()](AiCrawler/Heuristics/after_missing.md)
+* [on()](AiCrawler/Heuristics/on.md)
+* [children()](AiCrawler/Heuristics/children.md)
+* [parents()](AiCrawler/Heuristics/parents.md)
+* [siblings()](AiCrawler/Heuristics/siblings.md)
 
