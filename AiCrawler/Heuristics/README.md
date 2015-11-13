@@ -3,7 +3,7 @@
 - [Arguments](#arguments)
 - [Basic Usage](#basic)
 - [Subset Usage](#subset)
-- [Nested Usage](#nested)
+- [Nested and Repeated Usage](#nested)
 - [Why all the statics?](#statics)
 - [Helper Methods](helpers.md) $$^$$
 - [Extending Heuristics](extending.md) $$^$$
@@ -18,9 +18,11 @@ You will also notice that each method has a similar interface. e.g.
 public static function characters(AiCrawler &$node, array $args = [])
 ```
 
+Passing the node will allow our heuristics access to anything they might need. All arguments are passed as an array. 
+
 ## Arguments <a name="arguments"></a>
 
-Passing the node will allow our heuristics access to anything they might need. All arguments are passed as an array. This will later simplify storing the criteria for our heuristics in a configuration.
+Passing arguments as an array will later ease storing the criteria for our heuristics in a configuration.
 
 Another in-place convention is using a static object property for default arguments. e.g.
 
@@ -32,6 +34,15 @@ protected static $characters = [
 
 Missing arguments will fall back to the class property and there are [helper methods](helpers.md) so accessing arguments is readable and errors may be handled. There is also a property called `$defaults` for more general properties which acts a secondary fall back. If a heuristic requires an argument it cannot find, an `InvalidArgumentException` will be thrown. You should keep this in mind when [extending the Heuristics class](Heuristics/extending.md).
 
+### Matches
+
+The most ubiquitous argument is `matches`. Although there are varying usages, here are the most common:
+
+* all ~ all items in the given context match.
+* **any (default)** ~ any (1 or more) of the items in the given context match.
+* none ~ none of the items in the given context match.
+* integer: 0 ~ synonymous with none.
+* integer: n > 0 ~ at least n or more items in the given context match.
 
 ## Basic Usage <a name="basic"></a>
 
@@ -55,9 +66,9 @@ $assertion = Heuristics::characters($node, $args)); // true / false
 ```
     
     
-#### Most rules are designed accept an variety of args:
+#### Most rules are designed to accept an variety of args:
 
-Do any words in the div's text intersect with the words provided.
+Do any words in the div's text intersect with the words provided?
 
 ```    
 $args = [
@@ -78,8 +89,7 @@ $args = [
 $assertion = Heuristics::words($node, $args)); // true / false
 ```
 
-    
-Does the div's text (including the text of its descendants) have at least two matches from the first expression and at least one match from the second expression.
+Does the div's text (including the text of its descendants) have at least two matches from the first expression and at least one match from the second expression?
     
 ```
 $args = [
@@ -90,8 +100,10 @@ $args = [
     'regex' => true,
     'descendants' => true,
 ];
+
+$assertion = Heuristics::words($node, $args)); // true / false
 ```
-    
+
 ## Subset Usage <a name="subset"></a>
 
 The Symfony DOMCrawler has facilities like `children()`, `parents()`, `siblings()` which have corresponding rules in the `Heuristics` class. These are referred to as subset (or relation) methods.
@@ -105,6 +117,8 @@ Does the node have at least three children?
    
 ```    
 $args = ['children' => 3];
+
+$assertion = Heuristics::children($node, $args)); // true / false
 ```
     
 Synonymous with the above.
@@ -114,6 +128,8 @@ $args = [
     'type' => 'children',
     'matches' => 3
 ];
+
+$assertion = Heuristics::children($node, $args)); // true / false
 ```
     
 Any of the other rules on the `Heuristics` class can be an arg for `on()`
@@ -132,14 +148,61 @@ $args = [
     ],
     'matches' => 'all'
 ];
+
+$assertion = Heuristics::children($node, $args)); // true / false
+
 ```
     
 The logic for how assertions are made with subset methods is contained in the `on` method. How [matching is evaluated](on.md#matching) with the [`on()`](on.md) methods can be quite expressive.
 
-## Nested Usage <a name="nested"></a>
+## Nested and Repeated Usage <a name="nested"></a>
 
+Args may contain nested rules and they are resolved depth-first. We continue down the rabbit hole until there are no more rules or a rule misses (asserts false).
 
-    
+For the following example, let's pretend we don't know what kind of node we have.
+
+> Not knowing what node we have will prove useful later when iterating the DOM and making assertions. Instead of write proprietary code for special needs, we can throw a general rules at a bunch of nodes and see how things score.
+
+Please use your intuition to guess what is happening here:
+
+*Hint: Look at the assertion below the data structure before starting.*
+
+```
+[
+    'elements' => "article div ul",
+    'children' => [
+        'elements' => [
+            "elements" => "section p li"
+            'words' => [
+                'words' => 15,
+                'descendants' => true,
+                'words2' => [
+                    'words' => "/(cod(ing|ed|e)|program|language|php)/",
+                    'regex' => true,
+                    'descendants' => true
+                ]
+            ],
+        ],
+        'matches' => 3
+    ]
+]
+
+$assertion = Heuristics::elements($node, $args)); // true / false
+```
+
+I wholeheartedly hope your intuition did most of the work for you, let's summarize a true assertion:
+
+1. `elements()` was called and we match either article, div or ul.
+2. `elements()` calls `children()`
+3. `children()` calls `elements()` and we match section, p, or li.
+4. `elements()` calls `words()` and we match 15 words.
+5. `words()` calls `words()` **again** and match the regular expression.
+6. Steps 3 ~ 5 repeat for each child of the article, div or ul element.
+7. At least 3 or more children match the required criteria for `children()`
+8. `elements()` returns true.
+
+So nested rules are a simple way to apply **AND** logic to your assertions! If you review the [matches logic](on.md#matches) for the [`on()`](on.md) rule you be on your way to building robust, expressive assertions.
+
 ## Why all the statics?
 
 The `Heuristics` class was made entirely static so it would be difficult to build subsequent abstractions which put memory at risk. The Symfony DOMCrawler provides tools for iterating the DOM which we can apply heuristic assertions and then apply scoring. A combination of rule configurations, how we score those rules, and how we iterate the DOM will determine the usefulness of our tools.
