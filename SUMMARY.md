@@ -2,7 +2,7 @@
 
 * [Introduction](README.md)
 * [AiCrawler](AiCrawler/README.md)
-   * [Scorable](AiCrawler/scorable.md)
+   * [Scorable](AiCrawler/scorablemd.md)
    * [Extra](AiCrawler/extra.md)
    * [Heuristics](AiCrawler/Heuristics/heuristics.md)
        * [characters()](AiCrawler/Heuristics/characters.md)
@@ -28,3 +28,4 @@
    * [Responses](AiResponses/responses.md)
 * [AiScrapers](AiScrapers/README.md)
    * [Scrapers](AiScrapers/scrapers.md)
+
