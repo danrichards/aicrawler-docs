@@ -1,19 +1,20 @@
-#AiCrawler Web Scraping
+#AiCrawler
 
-A web scraping pattern using heuristics with Symfony Components.
+Leverage Ai design patterns using heuristics with the Symfony DOMCrawler.
 
 
 ## Table of Contents
 
-- [Features](#features)
-- [Install with Composer](#install)
-- [Usage with Examples](#usage)
+- [AiCrawler](AiCrawler/README.md)
+   - [Scorable](AiCrawler/scorable.md)
+   - [Extra](AiCrawler/extra.md)
+   - [Heuristics](AiCrawler/Heuristics/README.md)
 - [Release Notes](#notes)
 - [Contributing](#contributing)
 - [License](#license)
 
 
-##Features<a name="features"></a>
+## Quickstart<a name="quickstart"></a>
 
 The AiCrawler package has the responsibility of making boolean assertions on a node in the HTML DOM. It comes with a straight-forward data point trait which will record the results of your heuristics (rules) for a given "item" or context.
 
