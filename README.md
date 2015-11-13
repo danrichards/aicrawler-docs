@@ -23,35 +23,6 @@ The AiCrawler package has the responsibility of making boolean assertions on a n
 >$ composer require dan/aicrawler dev-master
 
 
-##Usage<a name="usage"></a>
-   
-### What does it do?
-
-The Symfony DOMCrawler does great job building special-purpose scrapers. AiCrawler provides the means to build intelligent all-purpose scrapers, or something specialized. The over-arching goal for this extension is to take a AI approach towards scoring nodes on the DOM, based on interesting characteristics that can be defined by a heuristic. 
-
-Scoring nodes using heuristics allows us to use our creativity to do some of the following things: 
-
-1. Learn / gather something special in a large arrangement of data.
-2. Reduce dependency on the DOM for finding our scraper's payload.
-
-### Why all the statics?
-
-The `Heuristics` class is static to minimize the impact it may have on memory in subsequent abstractions. All public methods are boolean, so it's essentially a tool for mapping functions (heuristics or rules) to nodes on the DOM. Usage of `Scoreable` in our abstractions impact will how useful our scrapers become.
-
-You will also notice that each method has a similar interface. e.g.
-
-    public static function characters(AiCrawler &$node, array $args = [])
-
-Passing the node will allow our heuristics access to anything they might need. All arguments are passed as an array. This will later simplify storing the criteria for our heuristics in a configuration.
-
-Another in-place convention is using a static object property for argument defaults. e.g.
-
-    protected static $characters = [
-        'characters' => true,
-    ];
-
-Any missing arguments will fall back to the class property. There is also a property called `$defaults` for more general properties which acts a secondary fall back. If a heuristic requires an argument it cannot find, an `InvalidArgumentException` will be thrown.
-
 ## Version 0.0.1<a name="notes"></a>
 
 - A heuristic pattern for building web scrapers.
