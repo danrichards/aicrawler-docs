@@ -21,14 +21,11 @@ these static methods without memory getting out of hand.
 
 ### Example Custom Heuristics Class
     
-    /**
-     * Class CustomHeuristics
-     */
     class CustomHeuristics extends Heuristics
     {
     
         /**
-         * Custom even function.
+         * Even function. Determine if a node is even among its siblings.
          *
          * @param AiCrawler $node
          * @param array $args
@@ -45,7 +42,7 @@ these static methods without memory getting out of hand.
         }
     
         /**
-         * Custom odd function.
+         * Odd function. Determine if a node is odd among its siblings.
          *
          * @param AiCrawler $node
          * @param array $args
