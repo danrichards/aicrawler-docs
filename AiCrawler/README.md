@@ -13,7 +13,7 @@ Scoring nodes using heuristics allows us to use our creativity to do some of the
 
 ## Why all the statics?
 
-The `Heuristics` class was made entirely static so it would be difficult to build subsequent abstractions which put memory at risk. All `public` methods look at a node return a `boolean` value. The Symfony DOMCrawler provides tools for iterating the DOM which we can combine heuristic assertions and apply scoring . A combination of rule configurations, how we score those rules, and how we iterate the DOM will determine how useful our tools become.
+The `Heuristics` class was made entirely static so it would be difficult to build subsequent abstractions which put memory at risk. All `public` methods look at a node return a `boolean` value. The Symfony DOMCrawler provides tools for iterating the DOM which we can apply heuristic assertions and then apply scoring . A combination of rule configurations, how we score those rules, and how we iterate the DOM will determine how useful our tools become.
 
 You will also notice that each method has a similar interface. e.g.
 
