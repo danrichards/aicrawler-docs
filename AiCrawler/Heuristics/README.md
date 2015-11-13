@@ -123,7 +123,7 @@ $args = ['children' => 3];
 $assertion = Heuristics::children($node, $args)); // true / false
 ```
     
-Synonymous with the above.
+Synonymous with the above, using `on()` rule.
 
 ```
 $args = [
@@ -131,7 +131,7 @@ $args = [
     'matches' => 3
 ];
 
-$assertion = Heuristics::children($node, $args)); // true / false
+$assertion = Heuristics::on($node, $args)); // true / false
 ```
     
 Any of the other rules on the `Heuristics` class can be an arg for `on()`
