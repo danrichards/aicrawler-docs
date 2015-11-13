@@ -5,8 +5,8 @@
 - [Subset Usage](#subset)
 - [Nested and Repeated Usage](#nested)
 - [Why all the statics?](#statics)
-- [Helper Methods](helpers.md) $$^$$
-- [Extending Heuristics](extending.md) $$^$$
+- [Helper Methods](helpers.md)
+- [Extending Heuristics](extending.md) 
 
 >The objective of a heuristic is to produce a solution in a reasonable time frame that is good enough for solving the problem at hand. This solution may not be the best of all the actual solutions to this problem, or it may simply approximate the exact solution. But it is still valuable because finding it does not require a prohibitively long time. ~ wikipedia
 
