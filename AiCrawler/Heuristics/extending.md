@@ -25,19 +25,6 @@ these static methods without memory getting out of hand.
      */
     class CustomHeuristics extends Heuristics
     {
-        /**
-         * Defaults for custom even() heuristic.
-         *
-         * @var array
-         */
-        protected static $even = [];
-    
-        /**
-         * Defaults for custom odd() heuristic.
-         *
-         * @var array
-         */
-        protected static $odd = [];
     
         /**
          * Custom even function.
@@ -55,13 +42,6 @@ these static methods without memory getting out of hand.
                 return false;
             }
         }
-    
-        /**
-         * Defaults for custom odd() heuristic.
-         *
-         * @var array
-         */
-        protected static $odd = [];
     
         /**
          * Custom odd function.
