@@ -69,7 +69,7 @@ $assertion = Heuristics::words($node, $args)); // true / false
 ```
     
     
-#### Most rules are designed to accept an variety of args:
+#### Most rules are designed to accept a variety of args:
 
 Do any words in the div's text intersect with the words provided?
 
