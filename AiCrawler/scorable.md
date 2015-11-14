@@ -2,7 +2,7 @@
 
 `Scoreable` is a trait available on the [`AiCrawler`](README.md) class which essentially manages an associative array of associative arrays. The purpose of this trait is to provide a pattern for storing data points for a given item (or context) in which we have made assertions.
 
-You might make a tool using the [`AiCrawler`](https://github.com/danrichards/aicrawler) package and the `scores` property on the current node (`AiCrawler` instance) might look as follows:
+For example, you may have a tool using the [`AiCrawler`](https://github.com/danrichards/aicrawler) package and the `scores` property on the current node (`AiCrawler` instance) might look as follows:
 ```
 $this->scores = [
     'item' => [
