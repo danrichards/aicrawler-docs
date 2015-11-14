@@ -29,7 +29,7 @@ The [AiCrawler](AiCrawler/README.md) package has the responsibility of making bo
 ## Version 0.0.1<a name="notes"></a>
 
 - A `Heuristics` class with some cool rules to get you started.
-- A `Scorable` trait is on our `AiCrawler`class for data points.
+- A `Scorable` trait is on our `AiCrawler`class so there is a pattern for data points.
 - A `Extra` trait is on our `AiCrawler` class so there is a pattern for storing extra data.
 
 
