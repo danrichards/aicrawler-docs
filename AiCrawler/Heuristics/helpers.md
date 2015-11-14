@@ -47,8 +47,8 @@ Get the text for a node.
 
 ## subset(AiCrawler &$node, $args = [], $condition = true, $function = null)
 
-On the condition passing, array_intersect with `static::$subsetFunctions`
-and run all those methods on the node provided. This enables us to nest
+When a rule hits, array_intersect with `static::$subsetFunctions`
+and run the additional rules provided. This enables us to nest
 our rules and continue down some rabbit hole to make an assertion.
 
 Nesting rules is like applying the AND operator. Neat!
