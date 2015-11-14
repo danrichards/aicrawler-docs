@@ -20,7 +20,7 @@ $this->scores = [
 ];
 ```
 
->Important: The [`Heuristics`](Heuristics/README.md) class will never augment the scores of a node, nor store the results of its assertions in the node. Currently, the only interaction with the `Scoreable` trait it has are the [`after_hitting()`](Heuristics/after_hitting.md) and [`after_missing()`](Heuristics/after_missing.md) methods.
+>Important: The [`Heuristics`](Heuristics/README.md) class will never augment the scores of a node, nor store the results of its assertions in the node. Currently, the only interaction it has with the `Scoreable` trait are the [`after_hitting()`](Heuristics/after_hitting.md) and [`after_missing()`](Heuristics/after_missing.md) methods.
 
 ## Why keep score?
 
