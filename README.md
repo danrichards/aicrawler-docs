@@ -12,9 +12,7 @@ Leverage Ai design patterns by using heuristics with the [Symfony DOMCrawler](ht
    - [Heuristics](AiCrawler/Heuristics/README.md)
 - [AiResponses](AiResponses/README.md)
 - [AiScrapers](AiScrapers/README.md)
-- [Release Notes](#notes)
-- [Contributing](#contributing)
-- [License](#license)
+- [GitHub](https://github.com/danrichards/aicrawler)
 
 
 ## Quickstart<a name="quickstart"></a>
@@ -27,7 +25,7 @@ The [AiCrawler](AiCrawler/README.md) package has the responsibility of making bo
 $ composer require dan/aicrawler dev-master
 ```
 
-### Trivial example
+### Trivial example<a name="install"></a>
 
 ```
 $crawler = new AiCrawler('<html>...</html>');
@@ -64,9 +62,9 @@ $args = [
 
 /**
  * Do at least 3 of this div's children which are p, blockquote, ul, ol or any
- * h element AND contain at least 15 words (including text from their 
+ * h element AND contain at least 15 words (including text from the child's 
  * descendants) AND words such as coding, coded, code, program, language, php 
- * (including text from its descendants).
+ * (including text from the child's descendants).
  */
 $crawler->filter("div")->each(function(&$node) use ($args) {
     if (Heuristics::children($node, $args) {
@@ -75,40 +73,3 @@ $crawler->filter("div")->each(function(&$node) use ($args) {
 });
 ```
 Sound interested? Read on about the [`Heuristics`](AiCrawler/Heuristics/README.md) class or go right to a [similar example](AiCrawler/Heuristics/README.md#nested) with complete notes.
-
-## Version 0.0.1<a name="notes"></a>
-
-- A `Heuristics` class with some cool rules to get you started.
-- A `Scorable` trait is on our `AiCrawler`class so there is a pattern for data points.
-- A `Extra` trait is on our `AiCrawler` class so there is a pattern for storing extra data.
-
-
-## Todo<a name="todo"></a>
-
-- [Search Github](https://github.com/danrichards/aicrawler/search?utf8=%E2%9C%93&q=todo)
-- Finish related projects. See [AiResponders](https://github.com/danrichards/airesponders), [AiScrapers](https://github.com/danrichards/aiscrapers), and [Larascrape](https://github.com/danrichards/larascrape).
-
-
-## Contributing<a name="contributing"></a>
-
-1. [Fork](https://github.com/danrichards/aicrawler) this [project](https://github.com/danrichards/aicrawler) on GitHub.
-2. Existing [unit tests](https://github.com/danrichards/aicrawler/tree/master/tests) must pass.
-3. Contributions must be unit tested.
-4. New heuristics should be portable (have few or no dependencies).
-5. New heuristics should have helpful doc blocks.
-6. Submit a pull request.
-7. See guide on [extending `Heuristics`](AiCrawler/Heuristics/extending.md) for special heuristics.
-
-### Documentation<a name="documentation"></a>
-
-- Follow [PSR-2](http://www.php-fig.org/psr/psr-2/).
-- Add PHPDoc blocks for all classes, methods, and functions
-- Omit the `@return` tag if the method does not return anything
-- Add a blank line before `@param`, `@return` or `@throws`
-
-Any issues, please [report here](https://github.com/danrichards/aicrawler/issues)
-
-
-## License<a name="license"></a>
-
-AiCrawler is free software distributed under the terms of the [MIT license](http://opensource.org/licenses/MIT).
