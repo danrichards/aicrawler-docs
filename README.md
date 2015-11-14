@@ -97,7 +97,7 @@ Sound interested? Read on about the [`Heuristics`](AiCrawler/Heuristics/README.m
 4. New heuristics should be portable (have few or no dependencies).
 5. New heuristics should have helpful doc blocks.
 6. Submit a pull request.
-
+7. See guide on [extending `Heuristics`](AiCrawler/Heuristics/extending.md) for special heuristics.
 
 ### Documentation<a name="documentation"></a>
 
