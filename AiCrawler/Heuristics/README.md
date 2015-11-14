@@ -183,7 +183,7 @@ Please use your intuition to guess what is happening here:
                     'regex' => true,
                     'descendants' => true
                 ]
-            ],
+            ]
         ],
         'matches' => 3
     ]
@@ -195,13 +195,14 @@ $assertion = Heuristics::elements($node, $args)); // true / false
 I wholeheartedly hope your intuition did most of the work for you, let's summarize a true assertion:
 
 1. `elements()` was called and we match either article, div or ul.
-2. `elements()` calls `children()`
+2. `elements()` calls `children()` and we're now examining sub-nodes.
 3. `children()` calls `elements()` and we match section, p, or li.
 4. `elements()` calls `words()` and we match 15 words.
 5. `words()` calls `words()` **again** and match the regular expression.
 6. Steps 3 ~ 5 repeat for each child of the article, div or ul element.
 7. At least 3 or more children match the required criteria for `children()`
 8. `elements()` returns true.
+
 
 So nested rules are a simple way to apply **AND** logic to your assertions! If you review the [matches logic](on.md#matches) for the [`on()`](on.md) rule you be on your way to building robust, expressive assertions.
 
