@@ -41,13 +41,16 @@ Missing arguments will fall back to the class property and there are [helper met
 
 ### Matches
 
-The most ubiquitous argument is `matches`. Although there are varying usages, here are the most common:
+The most ubiquitous argument is `matches`. Although there are varying usages for matches, many heuristics receive args which define constraints for counting something. Here are the most common:
 
 * all ~ all items in the rule's context match.
 * **any (default)** ~ any (1 or more) of the items in the rule's context match.
 * none ~ none of the items in the rule's context match.
 * integer: 0 ~ synonymous with none.
 * integer: n > 0 ~ at least n or more items in the rule's context match.
+ 
+For most heuristics, the usage of the `matches` arg is pretty intuitive. The documentation for each heuristic will clearly define how a it evaluates matches.
+
 
 ## Basic Usage <a name="basic"></a>
 
