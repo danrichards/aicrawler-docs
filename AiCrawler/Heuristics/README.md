@@ -37,7 +37,7 @@ protected static $characters = [
 ];
 ```
 
-Missing arguments will fall back to the class property and there are [helper methods](helpers.md) so accessing arguments is readable and errors may be handled. There is also a property called `$defaults` for more general properties which acts a secondary fall back. If a heuristic requires an argument it cannot find, an `InvalidArgumentException` will be thrown. You should keep this in mind when [extending the Heuristics class](Heuristics/extending.md).
+Missing arguments will fall back to the class property and there are [helper methods](helpers.md) so accessing arguments is readable and errors may be handled. There is also a property called `$defaults` for more general properties which acts a secondary fall back. If a heuristic requires an argument it cannot find, an `InvalidArgumentException` will be thrown. You should keep this in mind when [extending the Heuristics class](extending.md).
 
 ### Matches
 
