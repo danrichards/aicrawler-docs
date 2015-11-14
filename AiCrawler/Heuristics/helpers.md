@@ -13,7 +13,7 @@ Get the key or return the default.
 
 ## arr(array $args, $key, $explodeDelimiter = false)
 
-Get an `array` argument.
+Get an `array` argument. Optionally explode a string. Using `$explodeDelimiter = ''`, empty string will explode a string into it's characters.
 
     @param $args
     @param $key
