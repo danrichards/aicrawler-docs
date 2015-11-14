@@ -28,7 +28,7 @@ That is for you to decide, what are you building? What problem are you trying to
 
 It's also worth noting that we're **not** storing the result of the assertions in the `scores` property. Furthermore, the numbers are arbitrary and only mean anything to the tool you're building and the problem you're trying to solve.
 
-By using the `Scoreable` trait, you're subscribing to a convention that will help make all your tools operate similarly.
+By using the `Scoreable` trait, you're subscribing to a convention that will help make all your tools look clear and uniform.
 
 ## Helper Methods
 
