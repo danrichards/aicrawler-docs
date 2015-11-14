@@ -1,6 +1,6 @@
 #AiCrawler
 
-Leverage Ai design patterns using heuristics with the Symfony DOMCrawler.
+Leverage Ai design patterns by using heuristics with the Symfony DOMCrawler.
 
 
 ## Table of Contents
@@ -23,7 +23,9 @@ The [AiCrawler](AiCrawler/README.md) package has the responsibility of making bo
 
 ### Install with Composer<a name="install"></a>
 
->$ composer require dan/aicrawler dev-master
+```
+$ composer require dan/aicrawler dev-master
+```
 
 ### Trivial example
 
@@ -72,7 +74,7 @@ $crawler->filter("div")->each(function(&$node) use ($args) {
     }
 });
 ```
-Interested? Read on about the [`Heuristics`](AiCrawler/Heuristics/README.md) class or go right to a [similar example](AiCrawler/Heuristics/README.md#nested) with complete notes.
+Sound interested? Read on about the [`Heuristics`](AiCrawler/Heuristics/README.md) class or go right to a [similar example](AiCrawler/Heuristics/README.md#nested) with complete notes.
 
 ## Version 0.0.1<a name="notes"></a>
 
