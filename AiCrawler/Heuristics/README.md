@@ -133,7 +133,7 @@ Synonymous with the above, using `on()` rule.
 
 ```
 $args = [
-    'type' => 'children',
+    'on' => 'children',
     'matches' => 3
 ];
 
