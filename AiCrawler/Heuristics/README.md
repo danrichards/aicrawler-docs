@@ -1,10 +1,10 @@
 # Heuristics
 
-- [Arguments](#arguments)
-- [Basic Usage](#basic)
-- [Subset Usage](#subset)
-- [Nested and Repeated Usage](#nested)
-- [Why all the statics?](#statics)
+- [Arguments](1)
+- [Basic Usage][2]
+- [Subset Usage][3]
+- [Nested and Repeated Usage][4]
+- [Why all the statics?][5]
 - [Helper Methods](helpers.md)
 - [Extending Heuristics](extending.md) 
 - [Heuristics List](#heuristics)
@@ -22,7 +22,7 @@ public static function characters(AiCrawler &$node, array $args = [])
 
 Passing the node will allow our heuristics access to anything they might need. All arguments are passed as an array. 
 
-## Arguments <a name="arguments"></a>
+## Arguments [1] <a name="arguments"></a>
 
 Passing arguments as an array will later ease storing the criteria for our heuristics in a configuration.
 
@@ -154,16 +154,20 @@ $args = [
 $assertion = Heuristics::children($node, $args)); // true / false
 
 ```
-    
-The logic for how assertions are made with subset methods is contained in the `on` method. How [matching is evaluated](on.md#matching) with the [`on()`](on.md) methods can be quite expressive.
 
-## Nested and Repeated Usage <a name="nested"></a>
+### Subset evaluation with `on()` relation methods.
 
-Args may contain nested rules and they are resolved depth-first. We continue down the rabbit hole until there are no more rules or a rule misses (asserts false).
+The `children()`, `parents()`, and `siblings()` methods expect args with subsequent rules, and our `matches` arg supports a multitude of new options. If you review the [matches logic](on.md#matches) for the [`on()`](on.md) rule you be on your way to building robust, expressive assertions.
+
+## [Nested and Repeated Usage]
+
+Rules excluding the relation(`children()`, `parents()`, `siblings()`) rules call a special function called `subset()` before `true` is returned. This function looks for other rules included in the args and executes them until we assert `false`, or there are no more rules and finally we return `true`. 
+
+Nested rules are resolved depth-first and we may use this to our advantage to write more efficient assertions.
 
 For the following example, let's pretend we don't know what kind of node we have.
 
-> Not knowing what node we have will prove useful later when iterating the DOM and making assertions. Instead of write proprietary code for special needs, we can throw a general rules at a bunch of nodes and see how things score.
+> Not knowing what node we have will prove useful later when iterating the DOM and making assertions. Instead of write proprietary code for special needs, we can throw a general rules at a bunch of nodes and see how things score. See [`AiScrapers`](../../AiScrapers/README.md).
 
 Please use your intuition to guess what is happening here:
 
@@ -203,8 +207,7 @@ I wholeheartedly hope your intuition did most of the work for you, let's summari
 7. At least 3 or more children match the required criteria for `children()`
 8. `elements()` returns true.
 
-
-So nested rules are a simple way to apply **AND** logic to your assertions! If you review the [matches logic](on.md#matches) for the [`on()`](on.md) rule you be on your way to building robust, expressive assertions.
+Nested rules are a simple way to apply **AND** logic to your assertions! 
 
 ## Why all the statics?
 
