@@ -3,5 +3,5 @@
     "readme": "README.md",
     "summary": "SUMMARY.md"
   },
-  "plugins": ["youtube"]
+  "plugins": ["youtube", "anchors"]
 }
