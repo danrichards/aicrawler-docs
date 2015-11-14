@@ -1,23 +1,21 @@
 # Extending Heuristics
 
+The `Heuristics` class is a collection of static methods that return `boolean` values. When extending `Heuristics`, you should make your best effort to use the patterns it has put in place to work for you. If you don't it might work against you. :grin:
 
-The Heuristics class is a collection of static methods that return `boolean` values. Think of the class as a set of rules in which we may score (see [Scorable](../scorable.md)) nodes (make assertions) on the DOM. All the arguments are provided in one array `$args`, so we may easily store configurations and use our heuristic functions dynamically. This pattern (see [AiScrapers](../../AiScrapers/README.md) for example) in combination with the what you already get with the excellent [Symfony DOMCrawler](http://symfony.com/doc/current/components/dom_crawler.html) allow us to build abstractions that iterate the DOM and hit nodes with heuristics (rules) to determine some interesting.
-
-## Extending Heuristics
-
-### Best Practices
+## Best Practices
 
 1. Heuristics methods should follow the following interface: 
 
-   `public static function my_heuristic(AiCrawler &$node, array $args = [])`
-2. Heuristic method names should never intersect with argument names.
-3. Heuristic method names should not have integers in them.
+   `public static function awesome_heuristic(AiCrawler &$node, array $args = [])`
+2. Heuristic method names should never intersect with argument names of other heuristics.
+3. Heuristic method names should not have integers in them, subset methods use these!
 4. Usage of static class properties that match method names is encouraged.
 5. Usage of `arg`, `arr`, `boolean` and `text` helper methods is encouraged.
 6. Heuristic methods should `return static::subset(...)` instead of true when possible.
 7. Subset methods (e.g. `children()`) should not `return static::subset(...)`.
+8. Heuristic methods should not persist data to the node's `$extra` property when at all possible.
 
-### Example Custom Heuristics Class
+## Example Custom Heuristics Class
     
     class CustomHeuristics extends Heuristics
     {
