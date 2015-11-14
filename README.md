@@ -72,4 +72,4 @@ $crawler->filter("div")->each(function(&$node) use ($args) {
     }
 });
 ```
-Sound interested? Read on about the [`Heuristics`](AiCrawler/Heuristics/README.md) class or go right to a [similar example](AiCrawler/Heuristics/README.md#nested) with complete notes.
+Sound interested? [Continue reading](AiCrawler/README.md), review the [`Heuristics`](AiCrawler/Heuristics/README.md) class or go right to a [similar example](AiCrawler/Heuristics/README.md#nested) with complete notes.
