@@ -29,11 +29,11 @@ Passing the node will allow our heuristics access to anything they might need. A
 
 Passing arguments as an array will later ease storing the criteria for our heuristics in a configuration.
 
-Another in-place convention is using a static object property for default arguments. e.g.
+Another in-place convention is using a matching static object property for default arguments. e.g.
 
 ```
 protected static $characters = [
-    'characters' => true,
+    'characters' => true, // any characters returns true.
 ];
 ```
 
