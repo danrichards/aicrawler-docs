@@ -26,7 +26,7 @@ $this->scores = [
 
 That is for you to decide, what are you building? What problem are you trying to solve? If it's data extraction, the [`AiResponses`](../AiResponses/README.md) package is an example of how you can use these data points to conveniently extract information from the DOM.
 
-It's also worth noting that we're **not** storing the result of the assertions in the `scores` property. Furthermore, the numbers are arbitrary and only mean anything to the tool you're building and the problem you're trying to solve.
+It's also worth noting that we're **not** storing the result of the assertions in the `scores` property. Furthermore, the numbers are arbitrary and only mean anything to the tool you're building for the problem you're trying to solve.
 
 By using the [`Scoreable`](https://github.com/danrichards/aicrawler/blob/master/src/Dan/AiCrawler/Scoreable.php) trait, you're subscribing to a convention that will help make all your tools look clear and uniform.
 
