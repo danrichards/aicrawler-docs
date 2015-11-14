@@ -10,3 +10,12 @@ Scoring nodes using heuristics allows us to use our creativity to do some of the
 
 1. Learn / gather something special in a large arrangement of data.
 2. Reduce dependency on the DOM for finding our tool's payload.
+ 
+
+## Reading the docs
+
+Although I hate to be a jargonista, explaining things in documentation will be easier if you understanding the following:
+
+* The words "heuristics" and "rules" are used synonymously.
+* A rule "hitting" means the rule has asserted as true.
+* A rule "missing" means the rule has asserted as false.
