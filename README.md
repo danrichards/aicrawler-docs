@@ -5,7 +5,6 @@ Leverage Ai design patterns by using heuristics with the [Symfony DOMCrawler](ht
 
 ## Table of Contents
 
-- [Reading the docs](#reading)
 - [AiCrawler](AiCrawler/README.md)
    - [Scorable](AiCrawler/scorable.md)
    - [Extra](AiCrawler/extra.md)
