@@ -219,7 +219,7 @@ Nested rules are a simple way to apply **AND** logic to your assertions!
 <a name="statics"></a>
 ## Why all the statics?
 
-The `Heuristics` class was made entirely static so it would be difficult to build subsequent abstractions which put memory at risk. The Symfony DOMCrawler provides tools for iterating the DOM which we can apply heuristic assertions and then apply scoring. A combination of rule configurations, how we score those rules, and how we iterate the DOM will determine the usefulness of our tools.
+The `Heuristics` class was made entirely static so it would be difficult to build subsequent abstractions which put memory at risk. This also helps force you to do things a certain way when [extending](extending.md) `Heuristics`.
 
 <a name="heuristics"></a>
 ## Heuristics List
