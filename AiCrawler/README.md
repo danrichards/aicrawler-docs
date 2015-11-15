@@ -13,7 +13,7 @@ Scoring nodes using heuristics allows us to use our creativity to do some of the
 
 
 The  combination of rule configurations, how we score those rules, and how we iterate the DOM will determine the usefulness of the tools we build.
- 
+
 
 ## Reading the docs
 
